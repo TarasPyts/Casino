@@ -24,10 +24,8 @@ export class User extends GameMachine {
 
     if (this._selectMachine === null) {
       console.error('Please, select some Machine for game');
-
       return;
     }
-
     this.money += this._selectMachine.play(money);
   }
 }

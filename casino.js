@@ -1,5 +1,3 @@
-import { GameMachine } from './gamemachine.js';
-
 export class Casino {
   constructor(name) {
     this.name = name;
@@ -13,6 +11,7 @@ export class Casino {
   }
 
   getMachineCount() {
+    console.log(this.machines.length);
     return this.machines.length;
   }
 }

@@ -15,7 +15,7 @@ export class SuperAdmin extends User {
     return newCasino;
   }
 
-  createGameMashine(number) {
+  createGameMachine(number) {
     if (!this.casino) {
       console.error(`${this.name} create a new Casino`);
       return;
@@ -79,7 +79,7 @@ export class SuperAdmin extends User {
       console.error('Money are larger that casino bank');
       return;
     }
-    this.casino.machines = [...machines];
+    // this.casino.machines = [...machines];
     this.money += collectedAmount;
     return collectedAmount;
   }

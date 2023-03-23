@@ -4,6 +4,7 @@ export class GameMachine {
   }
 
   getMoney() {
+    console.log(this.number);
     return this.number;
   }
 

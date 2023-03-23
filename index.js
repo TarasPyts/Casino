@@ -1,25 +1,31 @@
-import { Casino } from './casino.js';
 import { GameMachine } from './gamemachine.js';
 import { User } from './user.js';
 import { SuperAdmin } from './superadmin.js';
 
 const admin = new SuperAdmin('admin', 10000);
+const casino = admin.createCasino('Las Palmas');
+const machine = admin.createGameMachine(100);
+const ma = admin.casino.machines;
+admin.createGameMachine(200);
+admin.createGameMachine(300);
 console.log(admin);
-const casino = admin.createCasino('Las Wegas');
-console.log(casino);
-const mashine = admin.createGameMashine(1000);
-console.log(mashine);
-admin.createGameMashine(100);
-admin.createGameMashine(500);
-// admin.takeMoneyFromCasino(1000);
+admin.setSelectMachine(ma[2]);
 console.log(admin);
+admin.play(20);
 
-admin.setSelectMachine(5);
-console.log(admin);
-// admin.play(40);
-// admin.getSelectMachine(1);
-// // admin.play(40);
-// // admin.play(40);
-// console.log(admin);
-// admin.play(40);
-// console.log(admin);
+const machine1 = new GameMachine(1000);
+
+const user = new User('Taras', 500);
+user.setSelectMachine(ma[1]);
+console.log(user);
+user.play(10);
+user.play(10);
+user.play(10);
+user.play(10);
+user.play(10);
+admin.removeGameMachine(1);
+user.setSelectMachine(ma[1]);
+console.log(user);
+console.log(casino);
+admin.takeMoneyFromCasino(100);
+admin.addMoneyToGameMachine(0, 100);
